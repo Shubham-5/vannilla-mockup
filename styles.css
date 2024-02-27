@@ -1,0 +1,253 @@
+:root {
+  --card-line-height: 1.2em;
+  --card-padding: 1.5rem;
+  --card-radius: 0.2rem;
+  --color-red: #ff6b82;
+  --color-gray: #dadada;
+  --color-dark-gray: #c4d1e1;
+  --radio-border-width: 2px;
+  --radio-size: 1rem;
+  --border-color: #c8c8c8;
+  --width: 400px;
+  --card-background: #fff9fa;
+}
+
+body {
+  background-color: #ffff;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem 0;
+  max-width: var(--width);
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header span {
+  height: 1.5px;
+  background-color: var(--border-color);
+  display: inline-flex;
+  width: 110px;
+}
+
+.title {
+  height: 24px;
+  color: var(--color-red);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  grid-gap: var(--card-padding) 0;
+  margin: 0 auto;
+  padding: 0;
+  max-height: var(--width);
+}
+
+.card {
+  background-color: #fff;
+  border-radius: var(--card-radius);
+  position: relative;
+  width: var(--width);
+}
+
+.radio {
+  font-size: inherit;
+  margin: 1px 0;
+  position: absolute;
+  left: calc(var(--card-padding) + var(--radio-border-width));
+  top: calc(var(--card-padding) + var(--radio-border-width));
+  accent-color: red;
+  cursor: pointer;
+  height: var(--radio-size);
+  transition: background 0.2s ease-out, border-color 0.2s ease-out;
+  width: var(--radio-size);
+}
+
+.card:hover .radio {
+  border-color: var(--border-color);
+}
+
+.plan-details {
+  border: var(--radio-border-width) solid var(--border-color);
+  border-radius: var(--card-radius);
+  cursor: pointer;
+  padding: var(--card-padding);
+  padding-left: 4rem;
+  transition: border-color 0.2s ease-out;
+}
+
+.plan-tag {
+  position: absolute;
+  top: 0;
+  right: 3%;
+  height: 18px;
+  font-size: small;
+  translate: 0% -40%;
+  background-color: var(--color-red);
+  padding: 4px 8px;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.rect {
+  position: absolute;
+  top: 0%;
+  right: 1.5%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid #d7445b;
+  border-right-width: 5px;
+  translate: 0% -50%;
+  width: 122px;
+  z-index: -30;
+}
+
+.plan-tag span {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.plan-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan-unit-container {
+  display: flex;
+  position: relative;
+  gap: 0.5rem;
+}
+
+.plan-cost-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.plan-inner-container {
+  display: none;
+  margin-top: 1rem;
+}
+
+.card:hover .plan-details {
+  border-color: var(--color-red);
+}
+
+.radio:checked ~ .plan-details {
+  border-color: var(--color-red);
+  background-color: var(--card-background);
+}
+
+.plan-unit {
+  color: var(--color-green);
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 16px;
+}
+
+.plan-type {
+  color: var(--color-green);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.plan-cost {
+  font-weight: bold;
+  line-height: 10px;
+}
+
+.plan-cost-discount {
+  text-decoration: line-through;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--border-color);
+}
+
+.plan-discount {
+  background-color: var(--color-red);
+  width: fit-content;
+  height: 14px;
+  font-size: small;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  margin-top: -5%;
+}
+.plan-cycle {
+  font-size: 2rem;
+  font-variant: none;
+  border-bottom: none;
+  cursor: inherit;
+  text-decoration: none;
+}
+
+.delivery-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delivery-title {
+  color: var(--color-red);
+  font-weight: 500;
+  font-size: medium;
+}
+
+.delivery-total .total {
+  font-weight: 500;
+}
+
+.table-header,
+.table-column {
+  font-size: small;
+  text-align: left;
+  padding: 1px;
+}
+
+select {
+  height: 30px;
+  width: 70px;
+  border: 1px #d9d9d9 solid;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+svg {
+  color: white;
+  height: 20px;
+  width: 20px;
+  margin-right: 4px;
+}
+
+.add-to-cart {
+  height: 40px;
+  text-align: center;
+  background-color: var(--color-red);
+  outline: none;
+  cursor: pointer;
+  border: 1px var(--color-red) solid;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
